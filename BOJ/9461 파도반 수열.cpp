@@ -57,6 +57,7 @@ int main() {
     cin.tie(0);
     ll N;
     int T;
+    cin >> T;
     for (int i = 0; i < T; i++) {
         cin >> N;
         cout << f(N) << "\n";
