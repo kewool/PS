@@ -28,7 +28,8 @@
 
 풀이
 메모리는 충분하니까 소요시간을 줄이기 위해 배열을 2개 만들어둔다.
-입력받은 N K에서 N-K 범위만큼 반복하고 그 안에서 i 부터 i + K 만큼 배열의 값을 더하고 두 번째 배열에 저장한다.
+입력받고 0부터 K까지 더한 값을 두 번째 배열에 저장한다.
+입력받은 N K에서 N-K 범위만큼 반복하고 두 번째 배열의 i 번째에서 첫 번째 배열의 i번째 값을 빼고 i + k 번째 값을 더해서 두 번째 배열의 i + 1에 저장한다.
 두 번째 배열에서 가장 큰 수를 출력한다.
 */
 #include <bits/stdc++.h>
@@ -42,7 +43,7 @@ int main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
-    fill(begin(arr2), end(arr2), - 100000);
+    fill(begin(arr2), end(arr2), - 10000000);
     cin >> N >> K;
     for (int i = 0; i < N; i++) cin >> arr1[i];
     arr2[0] = accumulate(begin(arr1), begin(arr1) + K, 0);
