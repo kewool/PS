@@ -11,8 +11,8 @@
 첫째 줄에 갑옷을 만들 수 있는 개수를 출력한다.
 
 풀이
-arr의 처음과 끝을 가리키는 left와 right를 이용해서 left + right가 M보다 크면 right--, M보다 작으면 left++,
-같으면 result++, left++, right--를 left와 right가 같거나 left가 right보다 커질 때까지 반복한다.
+정렬된 arr의 처음과 끝을 가리키는 left와 right를 이용해서 left + right가 M보다 크면 right--, M보다 작으면 left++,
+같으면 result++, left++, right--를 left >= right가 될 때까지 반복한다.
 */
 #include <bits/stdc++.h>
 #define loop(i,n) for(int i = 0; i < n; i++)
@@ -37,7 +37,7 @@ int main() {
 
     right_i = arr.size() - 1;
 
-    while (left_i != right_i && left_i < right_i) {
+    while (left_i < right_i) {
         tmp = arr[left_i] + arr[right_i];
         if (tmp < M) left_i++;
         else if (tmp > M) right_i--;
