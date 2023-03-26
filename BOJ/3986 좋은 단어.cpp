@@ -33,17 +33,17 @@ int main() {
         string str;
         cin >> str;
         if (str.size() % 2) continue;
-        vector<char> arr;
+        stack<char> stack;
 
         for (auto iter : str) {
-            if (!arr.size()) {
-                arr.push_back(iter);
+            if (stack.empty()) {
+                stack.push(iter);
                 continue;
             }
-            if (arr.back() != iter) arr.push_back(iter);
-            else arr.pop_back();
+            if (stack.top() != iter) stack.push(iter);
+            else stack.pop();
         }
-        if (!arr.size()) res++;
+        if (stack.empty()) res++;
     }
 
     cout << res;
